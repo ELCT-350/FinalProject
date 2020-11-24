@@ -11,10 +11,10 @@ namespace ELCT350
     class MnaBlock : public virtual SimulationBlock
     {
     public:
-      class MnaBlockKey final
+      class Key final
       {
       private:
-        MnaBlockKey(){};
+        Key(){};
 
         friend class MnaSolver;
       };
@@ -29,7 +29,7 @@ namespace ELCT350
       //auto firstPort = getMnaPort(MnaBlock(), 0);
       size_t getNumMnaPorts() const;
       
-      MnaPort& getMnaPort(const MnaBlockKey&, size_t portIndex);
+      MnaPort& getMnaPort(const Key&, size_t portIndex);
 
       //generic way of computing current
       void computeThroughValues();
