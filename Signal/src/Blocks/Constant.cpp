@@ -1,6 +1,6 @@
-#include "Constant.h"
+#include "Blocks/Constant.h"
 
-using namespace ELCT350::Signal;
+using namespace ELCT350::Signal::Blocks;
 
 Constant::Constant()
         : SimulationBlock(1),
@@ -8,7 +8,7 @@ Constant::Constant()
 {
 }
 
-void Constant::updateSignal(double timeStep, double time)
+void Constant::signalStep(double timeStep, double time)
 {
   setOutputPortValue(Output, getParameterValue(ConstantValue));
 }

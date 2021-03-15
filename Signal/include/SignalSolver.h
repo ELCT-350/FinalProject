@@ -1,5 +1,6 @@
 #pragma once
 #include "SignalBlock.h"
+#include <set>
 
 namespace ELCT350
 {
@@ -8,23 +9,21 @@ namespace ELCT350
     class SignalSolver
     {
     public:
-      //Initialize internal variables
       SignalSolver(double timeStep);
 
-      //Steps all of the components, in the proper order,
-      //and copies port values for connected ports
+      //1. Add outputBlock and inputBlock to your block list
+      //2. Connect ports (connect input port to an output port)
+      void connect(SignalBlock& outputBlock, size_t outputPort,
+                   SignalBlock& inputBlock, size_t inputPort);
+
+      //
       void step();
-
-      //Gets the current time within this solver
+      
       double getTime() const;
-
-      //Create a connection between an output port and an input port,
-      //Add both the outputBlock and the inputBlock to the set _blocks
-      void connect(SignalBlock& outputBlock, size_t outputPortIndex,
-                   SignalBlock& inputBlock, size_t inputPortIndex);
     private:
-      const double _timeStep;
+      double _timeStep;
       double _time;
+
       std::set<SignalBlock*> _blocks;
     };
   }

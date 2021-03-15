@@ -17,10 +17,10 @@ enable_testing()
 
 project(ELCT350)
 
-add_subdirectory(Math)
+#add_subdirectory(Math)
 add_subdirectory(Common)
 add_subdirectory(Signal)
-add_subdirectory(MNA)
-add_subdirectory(hybrid)
+#add_subdirectory(MNA)
+#add_subdirectory(Hybrid)
 add_subdirectory(Simulator)
 #add_subdirectory(tests)

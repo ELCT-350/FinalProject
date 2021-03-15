@@ -2,19 +2,20 @@
 
 namespace ELCT350
 {
-  class SimulationBlock
+  namespace Common
   {
-  public:
-    virtual ~SimulationBlock();
+    class SimulationBlock
+    {
+    public:
+      SimulationBlock(size_t numberOfParameters); //Create and initialize array
+      ~SimulationBlock(); //delete the array
 
-    void setParameterValue(size_t index, double value);
-    double getParameterValue(size_t index);
-  protected:
-    SimulationBlock(size_t numParameters);
-  private:      
-    const size_t _numParameters;
-    double* _parameters;
-
-    static void initializeArray(size_t arraySize, double array[]);
-  };
+      //Getters and setters with bounds checking
+      void setParameterValue(size_t parameterIndex, double value);
+      double getParameterValue(size_t parameterIndex) const;
+    private:
+      size_t _numberOfParameters;
+      double* _parameters;
+    };
+  }
 }

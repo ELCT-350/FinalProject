@@ -1,5 +1,5 @@
 #pragma once
-#include <set>
+#include <vector>
 
 namespace ELCT350
 {
@@ -8,13 +8,20 @@ namespace ELCT350
     class Dependent
     {
     public:
-      virtual void reset() = 0;
-      virtual bool isSet() const = 0;
+      bool isReady() const;
+      bool areDependenciesSatisfied() const;
+      size_t getNumberOfDependencies() const;
+      
+      void reset();
+    protected:
+      Dependent();
+
+      void setReady();
 
       void addDependency(const Dependent& dependency);
-      bool areDependenciesSatisfied() const;
     private:
-      std::set<const Dependent*> _dependencies;
+      bool _ready;
+      std::vector<const Dependent*> _dependencies;
     };
   }
 }
