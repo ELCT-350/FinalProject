@@ -17,7 +17,7 @@ enable_testing()
 
 project(ELCT350)
 
-#add_subdirectory(Math)
+add_subdirectory(Math)
 add_subdirectory(Common)
 add_subdirectory(Signal)
 #add_subdirectory(MNA)
