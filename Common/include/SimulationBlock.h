@@ -8,7 +8,7 @@ namespace ELCT350
     {
     public:
       SimulationBlock(size_t numberOfParameters); //Create and initialize array
-      ~SimulationBlock(); //delete the array
+      virtual ~SimulationBlock(); //delete the array
 
       //Getters and setters with bounds checking
       void setParameterValue(size_t parameterIndex, double value);
