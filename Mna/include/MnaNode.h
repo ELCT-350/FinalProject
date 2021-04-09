@@ -18,6 +18,9 @@ namespace ELCT350
       //Every port in node should have its parent node changed to this node
       void joinNode(Node& node);
       void setIndex(size_t index);
+      setAcross(double value);
+
+      bool isReference() const;
     private:
       size_t _index;
       std::set<MnaPort*> _ports;

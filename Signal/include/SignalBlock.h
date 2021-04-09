@@ -9,7 +9,9 @@ namespace ELCT350
   {
     class SignalBlock : public Dependent, public virtual Common::SimulationBlock
     {
-    public:
+    public:      
+      virtual ~SignalBlock();
+
       void connect(size_t inputPortIndex, const OutputPort& outputPort);
       const OutputPort& getOutputPort(size_t outputPortIndex) const;
 
