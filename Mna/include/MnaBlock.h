@@ -15,6 +15,7 @@ namespace ELCT350
       virtual void mnaStep(double timeStep, double time) = 0;
 
       void computeThroughValues();
+      void setReference(size_t port);
 
       double getJacobianValue(size_t row, size_t column) const;
       double getInterceptValue(size_t row) const;
@@ -25,7 +26,7 @@ namespace ELCT350
       MnaBlock(size_t numberOfMnaPorts);
 
       void setJacobianValue(size_t row, size_t column, double value);
-      void setInterceptValue(size_t row);
+      void setInterceptValue(size_t row, double value);
     private:
       size_t _numberOfMnaPorts;
       MnaPort* _ports;
