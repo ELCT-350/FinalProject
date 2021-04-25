@@ -24,8 +24,8 @@ namespace ELCT350
       double getInputPortValue(size_t inputPortIndex) const;
       void addDependency(size_t outputPortIndex, size_t inputPortIndex);
     private:
-      size_t numberOfInputPorts;
-      size_t numberOfOutputPorts;
+      size_t _numberOfInputPorts;
+      size_t _numberOfOutputPorts;
       InputPort* _inputPorts;
       OutputPort* _outputPorts;
     };
