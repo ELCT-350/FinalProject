@@ -12,12 +12,12 @@ namespace ELCT350
       double getValue() const;
       
       //add dependency to OutputPort
-      //check to see if a dependency already exists before adding this
-      //dependency
+      //can be connected to one output port only
       void connect(const OutputPort& port);
       void copyValue();
     private:
       double _value;
+      const OutputPort* _connected;
     };
   }
 }
